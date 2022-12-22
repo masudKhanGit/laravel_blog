@@ -1,0 +1,43 @@
+User
+	- id (int)
+	- name (string)
+	- email (string)
+	- password (string)
+	- timestamp()
+
+Category
+	- id (int)
+	- name (string)
+	- rank (int)
+	- timestamp()
+
+Post
+	- id (int)
+	- user_id (int)
+	- category_id (int)
+	- title (string)
+	- summery (text)
+	- body (text)
+	- image (string)
+	- timestamp()
+
+Like
+	- id (int)
+	- user_id (int)
+	- post_id (int)
+	- type (string)
+	- timestamp()
+
+Comment
+	- id (int)
+	- user_id (int)
+	- post_id (int)
+	- comment_id (int) nullable
+	- body (string)
+	- timestamp()
+
+View
+	- id (int)
+	- user_id (int)
+	- post_id (int)
+	- timestamp()

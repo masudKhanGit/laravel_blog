@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\BackendController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\FrontendController;
 
 /*
@@ -17,8 +17,10 @@ use App\Http\Controllers\Frontend\FrontendController;
 
 Route::get('/', [FrontendController::class, 'index'])->name('blog.home');
 
-Route::prefix('dashboard')->group(function() {
-    Route::controller(BackendController::class)->group(function() {
-        Route::get('/', 'index')->name('back.index');        
-    });
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('back.index');
 });
