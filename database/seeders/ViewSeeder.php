@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\View;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PostSeeder extends Seeder
+class ViewSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,12 +18,12 @@ class PostSeeder extends Seeder
     public function run()
     {
         $users = User::all();
-        $categories = Category::all();
+        $posts = Post::all();
         foreach($users as $user) {
-            foreach($categories as $category) {
-                Post::factory(3)->create([
+            foreach ($posts as $post) {
+                View::factory(2)->create([
                     'user_id' => $user->id,
-                    'category_id' => $category->id
+                    'post_id' => $post->id,
                 ]);
             }
         }

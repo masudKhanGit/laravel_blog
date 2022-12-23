@@ -21,11 +21,11 @@ Post
 	- image (string)
 	- timestamp()
 
-Like
+Reaction
 	- id (int)
 	- user_id (int)
 	- post_id (int)
-	- type (string)
+	- type (string) nullable
 	- timestamp()
 
 Comment

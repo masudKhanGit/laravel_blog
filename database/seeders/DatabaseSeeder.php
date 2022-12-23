@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\User;
+
 use Illuminate\Database\Seeder;
+use Database\Seeders\ReactionSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(PostSeeder::class);
+        $this->call(ReactionSeeder::class);
+        $this->call(CommentSeeder::class);
+        $this->call(ViewSeeder::class);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
