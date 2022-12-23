@@ -21,6 +21,12 @@ class PostFactory extends Factory
             'summery' => $this->faker->text(),
             'body' => $this->faker->text(),
             'image' => $this->faker->imageUrl(),
+            'status' => $this->faker->randomElement([
+                'PENDING',
+                'ACTIVE',
+                'INACTIVE',
+                'RESTRICTED'
+            ]),
         ];
     }
 }

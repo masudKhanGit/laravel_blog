@@ -27,6 +27,7 @@ return new class extends Migration
             $table->text('summery')->nullable();
             $table->text('body')->nullable();
             $table->string('image')->nullable();
+            $table->string('status')->default('PENDING');
             $table->timestamps();
         });
     }
